@@ -7,9 +7,9 @@
   "license": "MIT",
   "scripts": {
     "start": "eleventy --serve",
-    "build": "NODE_ENV=production npm-run-all build:functions build:site",
+    "build": "NODE_ENV=production npm-run-all build:functions build:11ty",
     "build:functions": "netlify-lambda build netlify/functions",
-    "build:site": "eleventy"
+    "build:11ty": "eleventy"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.8.3",
