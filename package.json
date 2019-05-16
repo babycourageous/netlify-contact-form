@@ -1,0 +1,11 @@
+{
+  "name": "netlify-contact-form",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/babycourageous/netlify-contact-form.git",
+  "author": "Rene Dellefont <renedellefont@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.8.3"
+  }
+}
