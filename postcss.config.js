@@ -1,6 +1,6 @@
 const postcssimport = require('postcss-import')
 const precss = require('precss')
-const tailwindcss = require('tailwindcss')('./tailwind.config.js')
+const tailwindcss = require('tailwindcss')()
 const autoprefixer = require('autoprefixer')
 const cssnano = require('cssnano')
 const purgecss = require('@fullhuman/postcss-purgecss')({
