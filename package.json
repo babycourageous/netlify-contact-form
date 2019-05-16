@@ -5,6 +5,10 @@
   "repository": "https://github.com/babycourageous/netlify-contact-form.git",
   "author": "Rene Dellefont <renedellefont@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "NODE_ENV=production build:functions",
+    "build:functions": "netlify-lambda build netlify/functions"
+  },
   "devDependencies": {
     "@11ty/eleventy": "^0.8.3",
     "@fullhuman/postcss-purgecss": "^1.2.0",
