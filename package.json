@@ -6,10 +6,12 @@
   "author": "Rene Dellefont <renedellefont@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "eleventy --serve",
-    "build": "NODE_ENV=production npm-run-all build:functions build:11ty",
+    "start": "npm-run-all build:assets:* serve",
+    "build": "NODE_ENV=production npm-run-all build:assets:* build:functions build:11ty",
+    "build:assets:css": "postcss _assets/css/index.css -o _site/css/styles.css",
     "build:functions": "netlify-lambda build netlify",
-    "build:11ty": "eleventy"
+    "build:11ty": "eleventy",
+    "serve": "eleventy --serve"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.8.3",
