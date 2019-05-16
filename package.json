@@ -6,8 +6,10 @@
   "author": "Rene Dellefont <renedellefont@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "NODE_ENV=production build:functions",
-    "build:functions": "netlify-lambda build netlify/functions"
+    "start": "eleventy --serve",
+    "build": "NODE_ENV=production npm-run-all build:functions build:site",
+    "build:functions": "netlify-lambda build netlify/functions",
+    "build:site": "eleventy"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.8.3",
