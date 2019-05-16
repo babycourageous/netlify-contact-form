@@ -6,12 +6,24 @@
   "author": "Rene Dellefont <renedellefont@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "npm-run-all build:assets:* serve",
-    "build": "NODE_ENV=production npm-run-all build:assets:* build:functions build:11ty",
+    "start": "netlify dev",
+    "predev": "yarn run clean",
+    "dev": "npm-run-all --parallel build:assets build:functions build:11ty --parallel serve watch:*",
+    "prebuild": "yarn run clean",
+    "build": "NODE_ENV=production npm-run-all --parallel build:assets build:functions --sequential build:11ty",
+    "build:assets": "npm-run-all --parallel build:assets:*",
     "build:assets:css": "postcss _assets/css/index.css -o _site/css/styles.css",
+    "build:assets:js": "webpack _assets/javascript/index.js -o _site/javascript/main.js",
     "build:functions": "netlify-lambda build netlify",
     "build:11ty": "eleventy",
-    "serve": "eleventy --serve"
+    "serve": "browser-sync '_site' --no-notify --no-open",
+    "serve:netlify": "netlify dev",
+    "browsersync:reload": "browser-sync reload",
+    "watch:css": "chokidar '_assets/css/**/*' 'tailwind.config.js' --command 'run-s build:assets:css browsersync:reload'",
+    "watch:js": "chokidar '_assets/javascript/**/*' --command 'run-s build:assets:js browsersync:reload'",
+    "watch:functions": "chokidar 'netlify/*.js' --command 'build:functions'",
+    "watch:11ty": "chokidar '*.html' '*.njk' '_includes/**/*' '_layouts/**/*' '_data/*.json' --command 'run-s build:11ty browsersync:reload'",
+    "clean": "rm -rf _site && mkdir _site"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.8.3",
