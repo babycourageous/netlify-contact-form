@@ -1,3 +1,9 @@
+const dotenv = process.env.NODE_ENV !== 'production' ? require('dotenv') : null
+
+if (process.env.NODE_ENV !== 'production') {
+  dotenv.config()
+}
+
 exports.handler = async event => {
   console.log(event)
 

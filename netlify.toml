@@ -2,7 +2,3 @@
   publish = "_site"
   functions = "_functions"
   command = "yarn run build"
-
-[dev]
-  command = "yarn run dev" # Command to start your dev server
-  port=3000 # port for Netlify to listen to (should match eleventy/browsersync site port - for auto-reload i think)
