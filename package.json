@@ -22,6 +22,8 @@
   "devDependencies": {
     "@11ty/eleventy": "^0.10.0",
     "@fullhuman/postcss-purgecss": "^2.1.0",
+    "@rollup/plugin-commonjs": "^11.0.2",
+    "@rollup/plugin-node-resolve": "^7.1.1",
     "autoprefixer": "^9.7.5",
     "babel-eslint": "^10.1.0",
     "chokidar": "^3.3.1",
@@ -40,6 +42,8 @@
     "precss": "^4.0.0",
     "prettier": "^2.0.2",
     "rollup": "^2.2.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-terser": "^5.3.0",
     "tailwindcss": "^1.2.0"
   }
 }
