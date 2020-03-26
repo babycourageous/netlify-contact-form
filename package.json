@@ -9,7 +9,7 @@
     "start": "npm run dev",
     "dev": "NODE_ENV=development npm-run-all --serial build:assets --parallel serve watch",
     "watch": "npm-run-all --parallel watch:*",
-    "watch:css": "chokidar 'src/_assets/css/**/*' 'tailwind.config.js' --command 'run-s build:assets:css browsersync:reload'",
+    "watch:css": "chokidar 'src/_assets/css/**/*' 'tailwind.config.js' --command 'run-s build:assets:css'",
     "watch:js": "rollup -c -w",
     "serve": "ELEVENTY_ENV=development eleventy --serve",
     "build": "NODE_ENV=production npm-run-all --serial build:assets build:11ty",
