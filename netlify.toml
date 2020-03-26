@@ -1,4 +1,4 @@
 [build]
   publish = "_site"
-  functions = "_functions"
+  functions = "src/_functions"
   command = "yarn run build"
