@@ -1,4 +1,7 @@
 [build]
   publish = "_site"
   functions = "src/_functions"
-  command = "yarn run build"
+  command = "npm run build"
+
+[dev]
+  command = "npm run dev"
