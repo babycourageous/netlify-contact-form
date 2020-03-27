@@ -1,0 +1,60 @@
+---
+layout: default.njk
+---
+<div class="mt-2 px-6 xl:px-12 w-full max-w-2xl mx-auto">
+  <div class="rounded-lg overflow-hidden border border-gray-400 p-4 px-3 py-10 bg-gray-200">
+    <div id="js-thanks"></div>
+    <h1 class="h3 mb-3 font-weight-normal">Progressive Contact Form w/ Netlify Lambda Functions</h1>
+    <form
+      id="js-contact"
+      class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+      method="post"
+      action="/thanks"
+      data-netlify="true"
+      name="contact-form-test"
+      netlify-honeypot="bot-field"
+    >
+      <p class="hidden">
+        <label>Don’t fill this out if you're human: <input name="bot-field"/></label>
+      </p>
+      <label for="js-name" class="sr-only">Your Name</label>
+      <input
+      class="form-input block w-full text-gray-800"
+        type="text"
+        name="name"
+        id="js-name"
+        placeholder="Your Name"
+        required
+/>
+      <label for="js-email" class="sr-only">Email address</label>
+      <input
+        class="form-input block w-full mt-4 text-gray-800"
+        type="email"
+        name="email"
+        id="js-email"
+        placeholder="Email address"
+        required
+/>
+      <label for="js-phone" class="sr-only">Phone Number</label>
+      <input
+      class="form-input block w-full mt-4 text-gray-800"
+        type="text"
+        name="phone"
+        pattern="^[0-9]{3}-[0-9]{3}-[0-9]{4}$"
+        title="Please enter a valid phone number in the format xxx-xxx-xxxx"
+        id="js-phone"
+        placeholder="Phone Number"
+/>
+      <label for="js-message" class="sr-only">Message</label>
+      <textarea
+      class="form-input block w-full mt-4 text-gray-800"
+        id="js-message"
+        name="message"
+        placeholder="Your Message"
+        required
+      ></textarea>
+      <button type="submit" class="mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+        Sign up for newsletter
+      </button>
+    </form>
+  </div>
