@@ -2,7 +2,7 @@ const sgMail = require('@sendgrid/mail')
 
 const { SENDGRID_API_KEY } = process.env
 const SENDGRID_SENDER_EMAIL = 'renedellefont@gmail.com'
-sgMail.setApiKey('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')
+sgMail.setApiKey(SENDGRID_API_KEY)
 
 exports.handler = async (event) => {
   // ONLY ALLOW POST REQUESTS
