@@ -9,8 +9,14 @@ layout: default.njk
       id="js-contact"
       class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
       method="post"
-      action="/.netlify/functions/contact"
+      action="/thanks"
+      data-netlify="true"
+      name="contact-form-test"
+      netlify-honeypot="bot-field"
     >
+      <p class="hidden">
+        <label>Don’t fill this out if you're human: <input name="bot-field"/></label>
+      </p>
       <label for="js-name" class="sr-only">Your Name</label>
       <input
       class="form-input block w-full text-gray-800"
@@ -22,7 +28,7 @@ layout: default.njk
 />
       <label for="js-email" class="sr-only">Email address</label>
       <input
-      class="form-input block w-full mt-4 text-gray-800"
+        class="form-input block w-full mt-4 text-gray-800"
         type="email"
         name="email"
         id="js-email"
