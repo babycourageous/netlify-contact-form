@@ -23,7 +23,12 @@ exports.handler = async (event) => {
         name,
       },
       subject: 'Sending with SendGrid is Fun',
-      text: body,
+      text: `
+      Test: ${body}
+      test: hello ${name}
+      `,
+      html: `<p><b>Contact Info</b></p><br/>
+      <p><b>Name: </b>${name}</p>`,
       phone,
     }
 
