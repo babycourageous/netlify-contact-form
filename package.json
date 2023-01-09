@@ -20,7 +20,7 @@
     "postinstall": "netlify-lambda install ./src/_functions"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.10.0",
+    "@11ty/eleventy": "^1.0.2",
     "@fullhuman/postcss-purgecss": "^2.1.0",
     "@rollup/plugin-commonjs": "^11.0.2",
     "@rollup/plugin-node-resolve": "^7.1.1",
